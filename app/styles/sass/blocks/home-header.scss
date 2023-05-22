@@ -8,6 +8,9 @@ html {
   height: 100%;
   color: #fff;
   padding-top: $size;
+  @include media-breakpoint-down(sm) {
+    padding-top: $size-sm;
+  }
 }
 
 .top-line {
@@ -20,6 +23,9 @@ html {
   background-color: $deep;
   display: flex;
   align-items: center;
+  @include media-breakpoint-down(sm) {
+    height: $size-sm;
+  }
 }
 
 .logo {
@@ -37,6 +43,12 @@ html {
     color: #fff;
     text-decoration: none;
   }
+  @include media-breakpoint-down(sm) {
+    flex: 1 0 0;
+  }
+  @include media-breakpoint-down(md) {
+    flex: 1 0 0;
+  }
 }
 
 .logo__img-wrapper {
@@ -45,6 +57,21 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    height: $size-sm;
+  }
+}
+
+.logo__text {
+  @include media-breakpoint-down(sm) {
+    display: none;
+    visibility: hidden;
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .menu-button-container {
@@ -52,6 +79,13 @@ html {
   text-align: right;
   position: relative;
   height: $size;
+  @include media-breakpoint-down(sm) {
+    height: $size-sm;
+    flex: 1 0 0;
+  }
+  @include media-breakpoint-down(md) {
+    flex: 1 0 0;
+  }
 }
 
 .menu-button {
@@ -68,6 +102,10 @@ html {
   &:hover {
     background-color: $accent;
   }
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    height: $size-sm;
+  }
 }
 
 .top-line__decoration {
@@ -82,6 +120,26 @@ html {
     opacity: $border-opacity * 2;
     position: relative;
     top: -5px;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .top-line__separator,
+  .top-line__address {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .top-line__separator,
+  .top-line__address {
+    display: none;
+    visibility: hidden;
   }
 }
 
@@ -127,16 +185,20 @@ html {
 
 .home-aside {
   background-color: $dark;
-  width: $size;
   height: 100%;
   position: absolute;
   top: 0;
+  width: $size;
   padding-top: $size;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 5;
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    padding-top: $size-sm;
+  }
 }
 
 .home-aside__decoration {
@@ -159,6 +221,10 @@ html {
   background-size: 40px;
   background-repeat: no-repeat;
   background-position: center;
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    flex: 0 0 $size-sm;
+  }
 }
 
 .soc-item {
@@ -197,17 +263,25 @@ html {
   height: 100%;
   overflow: hidden;
   position: relative;
+  @include media-breakpoint-down(sm) {
+    padding-left: $size-sm;
+  }
 }
 
 .slider-bottom {
   position: absolute;
   bottom: 0;
-  height: $size;
   display: flex;
   align-items: center;
-  left: $size;
   z-index: 5;
+  height: $size;
+  left: $size;
   width: calc(75% - #{$size});
+  @include media-breakpoint-down(sm) {
+    height: $size-sm;
+    left: $size-sm;
+    width: 100%;
+  }
 }
 
 .slider-share {
@@ -243,6 +317,10 @@ html {
       background-color: $accent;
     }
   }
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    height: $size-sm;
+  }
 }
 
 .slider-img {
@@ -257,6 +335,12 @@ html {
     height: 100%;
     background-color: rgba(#000, 0.4);
     z-index: 2;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+  @include media-breakpoint-down(md) {
+    width: 100%;
   }
 }
 
@@ -276,6 +360,9 @@ html {
   z-index: 4;
   width: 100%;
   height: calc(100% - #{$size});
+  @include media-breakpoint-down(sm) {
+    height: calc(100% - #{$size-sm});
+  }
 }
 
 .slider-text__slide {
@@ -300,6 +387,15 @@ html {
     color: $accent;
     white-space: nowrap;
   }
+  @include media-breakpoint-down(md) {
+    font-size: 35px;
+    max-width: 500px;
+    padding: 15px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 25px;
+    padding: 15px;
+  }
 }
 
 .slider-text__desc {
@@ -310,6 +406,14 @@ html {
   font-weight: 500;
   margin-top: 15px;
   margin-bottom: 20px;
+  @include media-breakpoint-down(md) {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 13px;
+    padding: 0 15px;
+  }
 }
 
 .slider-text__button {
@@ -350,6 +454,16 @@ html {
       top: -5px;
     }
   }
+  @include media-breakpoint-down(md) {
+    height: $size-sm;
+    display: none;
+    visibility: hidden;
+  }
+  @include media-breakpoint-down(sm) {
+    height: $size-sm;
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .slider-scrollbar {
@@ -374,6 +488,14 @@ html {
     height: 7px;
     top: -1px;
     background-color: $accent;
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+    visibility: hidden;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+    visibility: hidden;
   }
 }
 
@@ -410,6 +532,9 @@ html {
   .swiper-button-next {
     right: 0;
   }
+  @include media-breakpoint-down(sm) {
+    left: -35px;
+  }
 }
 
 .slider-gear {
@@ -423,6 +548,14 @@ html {
   top: 50%;
   transform: translate(0, -55%);
   right: calc(24% - 335px);
+  @include media-breakpoint-down(md) {
+    display: none;
+    visibility: hidden;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .slider-pagination-count {
@@ -441,6 +574,15 @@ html {
     color: $accent;
     display: inline-block;
   }
+  @include media-breakpoint-down(md) {
+    top: 5px;
+    right: 7px;
+    transform: scale(0.8);
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .slider-pagination-current {
@@ -454,5 +596,14 @@ html {
   &__dot {
     color: $accent;
     -webkit-text-stroke: 1px transparent;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 50px;
+    bottom: 0;
+    right: 20px;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+    visibility: hidden;
   }
 }
